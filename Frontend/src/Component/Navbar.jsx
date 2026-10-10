@@ -145,7 +145,7 @@ const Navbar = () => {
             </a>
 
             
-          <Button href="/vishalresume.pdf" variant="secondary" onClick={closeMenu} >Button</Button>
+          <Button href="/vishalresume.pdf" variant="secondary" onClick={closeMenu} >Resume</Button>
 
           </div>
         </div>
