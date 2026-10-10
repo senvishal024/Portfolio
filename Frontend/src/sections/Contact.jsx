@@ -1,8 +1,19 @@
 import socialLinks from "../data/social";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+} from "react-icons/fa";
 
+const icons = {
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  email: FaEnvelope,
+};
 const Contact = () => {
+  
   const [formData, setFormData] = useState({
   from_name: "",
   from_email: "",
@@ -97,32 +108,37 @@ const handleSubmit = async (e) => {
               </p>
 
               {/* Email */}
-              {socialLinks.map((item)=>(
-              <a
-                href={item.url}
-                key={item.id}
-                target="_blank"
-                rel="noopener noreferrer"
+{socialLinks.map((item) => {
+  const Icon = icons[item.type];
+  const isEmail = item.type === "email";
 
-                className="group mb-5 flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all duration-200 hover:border-[var(--accent-border)]"
-              >
+  if (!Icon) return null;
 
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--accent-border)] bg-[var(--accent-bg)] text-[var(--accent)]">
-                  {item.shortName}
-                </div>
+  return (
+    <a
+      href={item.url}
+      key={item.id}
+      target={isEmail ? undefined : "_blank"}
+      rel={isEmail ? undefined : "noopener noreferrer"}
+      className="group mb-5 flex min-w-0 items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all duration-200 hover:border-[var(--accent-border)]"
+    >
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--accent-border)] bg-[var(--accent-bg)] text-[var(--accent)]">
+        <Icon size={20} />
+      </div>
 
-                <div>
-                  <p className="mb-1 text-xs text-[var(--text)]">
-                    {item.name}
-                  </p>
+      <div className="min-w-0">
+        <p className="mb-1 text-xs text-[var(--text)]">
+          {item.name}
+        </p>
 
-                  <p className="text-sm font-medium text-[var(--text-h)] transition-colors group-hover:text-[var(--accent)]">
-                    {item.account}
-                  </p>
-                </div>
+        <p className="break-all text-sm font-medium text-[var(--text-h)] transition-colors group-hover:text-[var(--accent)]">
+          {item.account}
+        </p>
+      </div>
+    </a>
+  );
+})}
 
-              </a>
-              ))}
              
 
             </div>
