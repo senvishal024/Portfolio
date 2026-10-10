@@ -101,6 +101,9 @@ const handleSubmit = async (e) => {
               <a
                 href={item.url}
                 key={item.id}
+                target="_blank"
+                rel="noopener noreferrer"
+
                 className="group mb-5 flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--bg)] p-4 transition-all duration-200 hover:border-[var(--accent-border)]"
               >
 
