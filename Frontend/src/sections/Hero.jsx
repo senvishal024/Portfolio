@@ -60,7 +60,7 @@ const Hero = () => {
 
             <a
               href="https://github.com/senvishal024"
-              target="_blank"
+                target="_blank"
               rel="noreferrer"
               className="text-sm font-medium text-[var(--text)] transition-colors hover:text-[var(--accent)]"
             >

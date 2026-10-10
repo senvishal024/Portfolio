@@ -42,6 +42,8 @@ const Projects = () => {
 
           <a
             href="https://github.com/senvishal024"
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-[var(--accent)] transition-colors hover:text-[var(--text-h)]"
           >
             View GitHub Profile

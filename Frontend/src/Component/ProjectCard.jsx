@@ -42,6 +42,8 @@ const ProjectCard = ({item}) => {
 
           <a
             href={item.liveUrl}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black transition-all duration-200 hover:opacity-90"
           >
             Live Demo
@@ -49,6 +51,8 @@ const ProjectCard = ({item}) => {
 
           <a
             href={item.githubUrl}
+            target="_blank"
+              rel="noreferrer"
             className="rounded-lg border border-[var(--accent-border)] bg-[var(--accent-bg)] px-4 py-2 text-sm font-medium text-[var(--accent)] transition-all duration-200 hover:bg-[var(--accent)] hover:text-black"
           >
             GitHub
