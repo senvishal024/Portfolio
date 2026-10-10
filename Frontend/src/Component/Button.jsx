@@ -1,7 +1,19 @@
-const Button = ({ children, variant = "primary", href = "#" }) => {
+
+const Button = ({
+  children,
+  variant = "primary",
+  href = "#",
+  target = "_self",
+  rel,
+  onClick,
+}) => {
   return (
     <a
       href={href}
+        target="_blank"
+  rel="noreferrer"
+
+      onClick={onClick}
       className={`
         inline-flex
         items-center
@@ -13,7 +25,6 @@ const Button = ({ children, variant = "primary", href = "#" }) => {
         font-medium
         transition-all
         duration-200
-
         ${
           variant === "primary"
             ? "bg-[var(--accent)] text-black hover:opacity-90"
