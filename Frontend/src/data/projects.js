@@ -39,8 +39,8 @@ const projects = [
       "MongoDB",
     ],
 
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://new-generation-salon.vercel.app",
+    githubUrl: "https://github.com/senvishal024/Salon-Website.git",
 
     featured: true,
   },
